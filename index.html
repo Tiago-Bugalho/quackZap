@@ -198,7 +198,7 @@ function iniciar(){
 if(nome && hash) iniciar();
 
 function carregar(){
-    fetch(`https://cbbase.vercel.app/projeto/${pubKey}?all=true`)
+    fetch(`https://cbbase.qzz.io/projeto/${pubKey}?all=true`)
     .then(r => r.json())
     .then(dados => {
         if (!Array.isArray(dados)) return;
@@ -236,7 +236,7 @@ function enviar(){
     somQuack.currentTime = 0;
     somQuack.play().catch(() => {});
 
-    fetch('https://cbbase.vercel.app/projeto/' + secKey, {
+    fetch('https://cbbase.qzz.io/projeto/' + secKey, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify([{ nome, hash, msg: texto }])
